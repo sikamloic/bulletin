@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="px-5 grid grid-cols-2 gap-2 place-items-center">
+  <button 
+    class="w-32 h-20 rounded-md shadow-md flex justify-center items-center px-2" 
+    (click)="goTo(item._id)"
+    *ngFor="let item of bulletins"
+    >
+    Bulletin de {{item.eleve.nom}} {{item.eleve.prenom}}
+  </button>
+</div>
+
+<div class="flex justify-center items-center my-10">
+  <button 
+    class="border-2 border-green-400 text-green-600 bg-white uppercase rounded-md w-36"
+    (click)="generer()"
+  >
+    générer vos bulletins
+  </button>
+</div>

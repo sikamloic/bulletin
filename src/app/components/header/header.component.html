@@ -1,0 +1,10 @@
+<div class="relative md:hidden">
+  <div class="" (click)="showmenu = !showmenu">
+    <img src="assets/menu.svg" alt="" class="w-10">
+  </div>
+  <div *ngIf="showmenu" class="right-5 top-2 rounded-md absolute shadow-lg bg-[#cecece] w-44 p-1 space-y-2">
+    <div class="text-center uppercase transform-cpu hover:scale-110" *ngFor="let item of menu" routerLink={{item.to}}>{{item.nom}}</div>
+  </div>
+</div>
+
+<div class=""></div>

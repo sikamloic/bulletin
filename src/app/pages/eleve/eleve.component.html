@@ -1,0 +1,45 @@
+<app-header></app-header>
+<form class="px-5 text-gray-600 my-5" [formGroup]="registerForm" (ngSubmit)="onRegister()" *ngIf="enregistrement">
+  <div class="flex justify-end items-end" (click)="enregistrement = false">
+    <img src="assets/close.svg" alt="" class="w-10">
+  </div>
+  <div class="border-2 rounded-lg flex flex-col items-center p-2 space-y-3">
+    <input type="text" placeholder="Nom" class="border-green-400 border-2 rounded-md h-10 pl-2" formControlName="nom">
+    <input type="text" placeholder="Prénom" class="border-green-400 border-2 rounded-md h-10 pl-2" formControlName="prenom">
+    <input type="number" placeholder="Age" class="border-green-400 border-2 rounded-md h-10 pl-2" formControlName="age">
+    <div class="flex items-center space-x-5">
+      <label for="">classe</label>
+      <select name="" id="" class="border-green-400 border-2 rounded-md h-10" formControlName="classe">
+        <option value="6">6</option>
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+        <option value="Tle">Tle</option>
+      </select>
+    </div>
+    <button type="submit" class="bg-green-400 text-white h-10 w-32 uppercase rounded-md">enregistrer</button>
+  </div>
+</form>
+<div class="">
+  <div class="px-5">
+    <div class="grid grid-cols-2 gap-2">
+      <div class="bg-[#c7afcf] rounded-md shadow-lg w-36 p-2 space-y-3" *ngFor="let eleve of eleves">
+        <div class="grid grid-cols-2 gap-3 place-items-center p-1 text-sm">
+          <div class="">{{eleve.nom}}</div>
+          <div class="">{{eleve.prenom}}</div>
+          <div class="">{{eleve.age}}</div>
+          <div class="">{{eleve.classe}}</div>
+        </div>
+        <div class="flex justify-between">
+          <div class="bg-green-600 rounded-md w-8 p-1"><img src="assets/edit.svg" alt="" class="text-white"></div>
+          <div class="bg-red-600 rounded-md w-8 p-1"><img src="assets/delete.svg" alt="" class=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center items-center my-5">
+      <button class="uppercase w-56 h-10 rounded-md bg-green-400 text-white" (click)="addEleve()">ajouter un élève</button>
+    </div>
+  </div>
+</div>

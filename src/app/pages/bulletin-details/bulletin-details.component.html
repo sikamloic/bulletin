@@ -1,0 +1,21 @@
+<div class="px-5 flex justify-between items-center">
+  <app-header></app-header>
+</div>
+
+<div class="px-5">
+  <div class="grid grid-cols-4 gap-2 place-items-stretch">
+    <div class="col-span-2">{{resultat[0].eleve.nom}}</div>
+    <div class="col-span-2">{{resultat[0].eleve.prenom}}</div>
+    <div class="col-span-2">{{resultat[0].eleve.age}} ans</div>
+    <div class="col-span-2">Classe de: {{nomme(resultat[0].eleve.classe)}}</div>
+  </div>
+  <div class="grid grid-cols-5" *ngFor="let item of resultat[0].matieres">
+    <div class="col-span-2">{{item.nom}}</div>
+    <div class="">{{item.coeff}}</div>
+    <div class="">{{item.note}}</div>
+    <div class="">
+      <button class=""><img src="assets/edit.svg" alt="" class="w-5"></button>
+      <button class="hidden"><img src="" alt="" class="w-5"></button>
+    </div>
+  </div>
+</div>
